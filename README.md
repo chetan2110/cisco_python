@@ -1,2 +1,2 @@
 # cisco_python
-My Learning in cisco python course
+My Learning in cisco core_python course 
