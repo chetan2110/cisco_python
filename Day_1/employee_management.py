@@ -27,7 +27,7 @@ else:
     search_employee = employees[index]
     print(search_employee)
     salary = float(input('Salary : '))
-    employees[index]=employee
+    employees[index] = (search_employee[0],search_employee[1],salary,search_employee[3])
 print('After search and update: ',employees)
 
 employee=('Dravid',50,200.75,True)
