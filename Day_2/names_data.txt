@@ -1,0 +1,2 @@
+List: ['abhi', 'baskar', 'chetan', 'lasya', 'punit']
+Tuple: ('abhi', 'baskar', 'chetan', 'lasya', 'punit')
