@@ -1,4 +1,4 @@
-import repo_pickel_dict as repo
+import repo_sql_dict as repo
 
 def menu():
     message = '''
@@ -10,12 +10,9 @@ Options are:
 5 - Delete Employee
 6 - Exit 
 Your Option:'''
-    es = {}
     choice = int(input(message))
     if choice == 1:
         id = int(input('ID:'))
-        if id in es:
-            print("Employee id already exists cannot create new employee")
         name = input('Name:')
         age = int(input('Age:'))
         salary = float(input('Salary:'))
@@ -27,16 +24,10 @@ Your Option:'''
         repo.create_employee(employee)
 
         print('Employee Created Successfully.')
-        es.add(id)
     elif choice == 2:
-        data = repo.read_all_employee()
-        if len(data) == 0:
-            print("No Employees data created")
-        else:
-            print('List of Employees:')
-            for employee in data:
-                print(employee)
-       
+        print('List of Employees:')
+        for employee in repo.read_all_employee():
+            print(employee)
     elif choice == 3:
         id = int(input('ID:'))
         employee = repo.read_by_id(id)

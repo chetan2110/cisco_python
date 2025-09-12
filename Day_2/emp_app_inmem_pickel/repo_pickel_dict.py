@@ -2,7 +2,8 @@ import db_pickel as db
 
 file_name='employees.dat'
 employees = db.read_from_file(file_name)
-
+es={}
+es.add(employees)
 def create_employee(employee):
     global employees 
     employees.append(employee)
