@@ -9,13 +9,13 @@ Options are:
 4 - Update Employee
 5 - Delete Employee
 6 - Exit 
-Your Option:'''
-    es = {}
+Enter Your Option:'''
     choice = int(input(message))
     if choice == 1:
         id = int(input('ID:'))
-        if id in es:
+        if id in repo.es:
             print("Employee id already exists cannot create new employee")
+            return
         name = input('Name:')
         age = int(input('Age:'))
         salary = float(input('Salary:'))
@@ -27,7 +27,7 @@ Your Option:'''
         repo.create_employee(employee)
 
         print('Employee Created Successfully.')
-        es.add(id)
+        repo.es.add(id)
     elif choice == 2:
         data = repo.read_all_employee()
         if len(data) == 0:
@@ -67,6 +67,7 @@ Your Option:'''
         else:
             repo.delete_employee(id)
             print('Employee Deleted Succesfully.')
+            repo.es.remove(id)
     elif choice == 6: 
         print('Thank you for using Application')
 
